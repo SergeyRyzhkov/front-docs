@@ -1,0 +1,55 @@
+ 
+ {
+  "RU": 
+    [
+        {
+          "text":"Главная",
+          "link": "/"
+        },
+        {
+          "text":"Nuxt 2",
+          "link": "/nuxt2"
+        },
+        {
+          "text": "Типовые кейзы",
+          "children": [
+           {
+            "text":"SEO",
+            "children":[
+               {
+                 "text":"Slug (ЧПУ)",
+                  "link": "/nuxt2/cases/seo.md"
+               } 
+            ]
+           }
+         ]
+         
+        }
+   ],
+
+  "EN":
+   [
+      {
+          "text":"Main",
+          "link": "/"
+      },
+      {
+        "text":"Typical cases",
+         "children": [
+           {
+            "text":"SEO",
+            "children":[
+               {
+                 "text":"/cases/seo.md",
+                 "link": "/cases/seo.md"
+               } 
+            ]
+           }
+         ]
+      }
+   ]
+}
+
+ 
+  
+

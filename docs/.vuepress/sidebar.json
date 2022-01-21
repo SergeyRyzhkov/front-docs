@@ -1,0 +1,10 @@
+ {"/nuxt2": [
+    {
+      "text": "Nuxt 2. Общие сведения",
+      "children": [
+         "/nuxt2/README.md",
+         "/nuxt2/config.md"
+      ]
+    }
+  ]
+}
