@@ -21,6 +21,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
       },
     ],
+    //["@vuepress/plugin-shiki"],
   ],
 
   locales: {
@@ -36,7 +37,8 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     docsDir: "docs",
-
+    lastUpdated: false,
+    contributorsText: "Автор",
     locales: {
       "/": {
         selectLanguageName: "Русский",

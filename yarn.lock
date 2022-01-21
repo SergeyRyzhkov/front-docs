@@ -287,7 +287,7 @@
     "@vue/compiler-dom" "3.2.28"
     "@vue/shared" "3.2.28"
 
-"@vue/devtools-api@^6.0.0-beta.18":
+"@vue/devtools-api@^6.0.0-beta.18", "@vue/devtools-api@^6.0.0-beta.21.1":
   version "6.0.0-beta.21.1"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
   integrity sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==
@@ -382,12 +382,34 @@
     vue "^3.2.26"
     vue-router "^4.0.12"
 
+"@vuepress/client@2.0.0-beta.34":
+  version "2.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@vuepress/client/-/client-2.0.0-beta.34.tgz#969ae976fa1b120e9fd9c0b448665aace5380e34"
+  integrity sha512-qjFpTRlHO2N43RgAASjBKGxfRN3R+Cnf+s1MpEtakwHV4oWCXq3VNiOzjXhjEfdpZ0LPxCuieg9ja/8t/Vgy3g==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.21.1"
+    "@vuepress/shared" "2.0.0-beta.33"
+    vue "^3.2.26"
+    vue-router "^4.0.12"
+
 "@vuepress/core@2.0.0-beta.33":
   version "2.0.0-beta.33"
   resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-2.0.0-beta.33.tgz#3011b0ac003da736581017afd220678f6d14a855"
   integrity sha512-ZOZ6Vc8lmA+qSof3l8By7ogu1qdGdI3OweZHzbP7FkGC1Dd0gL5aCqmkZQqdhBCOv/iPo5jmDaXpI1Vvoj4VUg==
   dependencies:
     "@vuepress/client" "2.0.0-beta.33"
+    "@vuepress/markdown" "2.0.0-beta.33"
+    "@vuepress/shared" "2.0.0-beta.33"
+    "@vuepress/utils" "2.0.0-beta.33"
+    gray-matter "^4.0.3"
+    toml "^3.0.0"
+
+"@vuepress/core@2.0.0-beta.34":
+  version "2.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-2.0.0-beta.34.tgz#f350df1f2fd8ac2291614f166bfd1e40ee818678"
+  integrity sha512-GMY67QxaLjR+YJMINZzD7uir3kEpkxg/A3MLpgJip1ODWo7/1zYBGXMlYVHyFzfWVipTYBnqt6BGTi78+pyyPQ==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.34"
     "@vuepress/markdown" "2.0.0-beta.33"
     "@vuepress/shared" "2.0.0-beta.33"
     "@vuepress/utils" "2.0.0-beta.33"
@@ -530,6 +552,14 @@
     chokidar "^3.5.2"
     vue "^3.2.26"
     vue-router "^4.0.12"
+
+"@vuepress/plugin-shiki@^2.0.0-beta.34":
+  version "2.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-shiki/-/plugin-shiki-2.0.0-beta.34.tgz#dec018a3794417654017cc1826e12a5f6ef64d79"
+  integrity sha512-SFNrmMqjdlvAzyn8WXPPz2rgehnuZbMeUpySuyuUPRlfx0xh+Tl1pEUCzWJg/2rS9Nx6W6cPg9vEX98PuEjOUQ==
+  dependencies:
+    "@vuepress/core" "2.0.0-beta.34"
+    shiki "^0.10.0"
 
 "@vuepress/plugin-theme-data@2.0.0-beta.33":
   version "2.0.0-beta.33"
@@ -1196,6 +1226,11 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
+jsonc-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-3.0.0.tgz#abdd785701c7e7eaca8a9ec8cf070ca51a745a22"
+  integrity sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==
+
 jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.1.0.tgz#bc55b2634793c679ec6403094eb13698a6ec0aae"
@@ -1520,6 +1555,15 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
+shiki@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.10.0.tgz#85f21ecfa95b377ff64db6c71442c22c220e9540"
+  integrity sha512-iczxaIYeBFHTFrQPb9DVy2SKgYxC4Wo7Iucm7C17cCh2Ge/refnvHscUOxM85u57MfLoNOtjoEFUWt9gBexblA==
+  dependencies:
+    jsonc-parser "^3.0.0"
+    vscode-oniguruma "^1.6.1"
+    vscode-textmate "5.2.0"
+
 signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.6.tgz#24e630c4b0f03fea446a2bd299e62b4a6ca8d0af"
@@ -1634,6 +1678,16 @@ vite@^2.7.10:
     rollup "^2.59.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+vscode-oniguruma@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/vscode-oniguruma/-/vscode-oniguruma-1.6.1.tgz#2bf4dfcfe3dd2e56eb549a3068c8ee39e6c30ce5"
+  integrity sha512-vc4WhSIaVpgJ0jJIejjYxPvURJavX6QG41vu0mGhqywMkQqulezEqEQ3cO3gc8GvcOpX6ycmKGqRoROEMBNXTQ==
+
+vscode-textmate@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/vscode-textmate/-/vscode-textmate-5.2.0.tgz#01f01760a391e8222fe4f33fbccbd1ad71aed74e"
+  integrity sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==
 
 vue-demi@*:
   version "0.12.1"
