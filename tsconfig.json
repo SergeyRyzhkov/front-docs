@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "ES2020",
+    "target": "ES2018",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["DOM", "ES2020"],
+    "skipLibCheck": true,
+    "sourceMap": false
+  },
+
+  "include": ["**/.vuepress/**/*", "packages/**/*"],
+  "exclude": ["node_modules", ".temp", "lib", "dist"]
+}
