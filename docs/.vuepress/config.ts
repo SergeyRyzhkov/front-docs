@@ -5,8 +5,6 @@ import sidebar from "./sidebar.json";
 import navbar from "./navbar.json";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: "/front-docs/",
-
   plugins: [
     [
       "@vuepress/plugin-search",
