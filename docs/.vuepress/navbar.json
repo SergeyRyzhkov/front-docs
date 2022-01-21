@@ -15,15 +15,10 @@
           "children": [
            {
             "text":"SEO",
-            "children":[
-               {
-                 "text":"Slug (ЧПУ)",
+           
                   "link": "/nuxt2/cases/seo.md"
-               } 
-            ]
-           }
-         ]
-         
+           } 
+         ]        
         }
    ],
 
