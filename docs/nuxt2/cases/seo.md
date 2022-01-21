@@ -80,7 +80,7 @@ export default class SeoModel extends BaseViewModel {
 
 #### Для страницы в админке определены поля для SEO-мета тегов
 
-```vue
+```vue{13,19-24}
 <script lang="ts">
 import { Component, Prop, Vue, getModule } from "nuxt-property-decorator";
 import NewsModel from "../models/NewsModel";
@@ -96,10 +96,7 @@ export default class NewsPage extends Vue {
   newsModel: NewsModel = new NewsModel();
 
   async fetch() {
-    const id = this.$serviceLocator.getService(EmptyService).getIdBySlug(this.slug);
-    this.newsModel = await this.$serviceLocator.getService(EmptyService).getOneOrDefault(NewsModel, `users/news/${id}`);
   }
-
  
   // Определяем логику. Пакет vue-meta будет "дергать" метод head() и ожидать объект с описанием метатегов
   head() {

@@ -1,9 +1,23 @@
  {"/nuxt2": [
     {
-      "text": "Nuxt 2. Общие сведения",
+      "text": "Общие сведения",
       "children": [
          "/nuxt2/README.md",
          "/nuxt2/config.md"
+      ]
+    },
+
+    {
+      "text": "Типовые кейзы",
+      "children": [
+         "/nuxt2/cases/seo.md"
+      ]
+    },
+
+    {
+      "text": "Разное",
+      "children": [
+         "/nuxt2/cases/config.md"
       ]
     }
   ]
