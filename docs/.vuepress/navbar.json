@@ -18,9 +18,13 @@
               "link": "/nuxt2/cases/seo.md"
             },
             {
-            "text":"Хлебные крошки (BreadCrumbs)",
-             "link": "/nuxt2/cases/breadcrumbs.md"
-           }
+              "text":"Хлебные крошки (BreadCrumbs)",
+              "link": "/nuxt2/cases/breadcrumbs.md"
+            },
+            {
+              "text":"SCSS, CSS переменные и Tailwind",
+              "link": "/nuxt2/other/cssvars.md"
+            }
          ]        
         }
    ],
