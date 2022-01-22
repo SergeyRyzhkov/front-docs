@@ -18,7 +18,8 @@
     {
       "text": "Разное",
       "children": [
-         "/nuxt2/other/cssvars.md"
+         "/nuxt2/other/cssvars.md",
+         "/nuxt2/other/codereview.md"
       ]
     }
   ]
