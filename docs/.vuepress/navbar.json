@@ -13,11 +13,14 @@
         {
           "text": "Типовые кейзы",
           "children": [
-           {
-            "text":"SEO",
-           
-                  "link": "/nuxt2/cases/seo.md"
-           } 
+            {
+              "text":"SEO",
+              "link": "/nuxt2/cases/seo.md"
+            },
+            {
+            "text":"Хлебные крошки (BreadCrumbs)",
+             "link": "/nuxt2/cases/breadcrumbs.md"
+           }
          ]        
         }
    ],
