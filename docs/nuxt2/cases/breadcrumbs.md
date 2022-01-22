@@ -4,7 +4,7 @@
 
 ## Базовые классы
 
-1. Класс- модель, описывающий свойства маршрута (`nuxt-link`)
+1. Тип, описывающий свойства маршрута (`nuxt-link`)
    `RouteLink` (`src\_core\models\RouteLink.ts`)
 
 ```ts
@@ -47,7 +47,7 @@ export type RouteLink = {
 
 ## Примеры:
 
-### С использованием Vuex
+### с использованием Vuex
 
 ```vue
 <template>
@@ -75,7 +75,7 @@ export default class TrainingListPage extends Vue {
 }
 ```
 
-### С использованием локального состояния (data)
+### с использованием локального состояния (data)
 
 ```vue
 <template>
