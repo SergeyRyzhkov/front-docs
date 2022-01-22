@@ -21,6 +21,13 @@ export default defineUserConfig<DefaultThemeOptions>({
         },
       },
     ],
+
+    [
+      "@vuepress/plugin-google-analytics",
+      {
+        id: "G-217885888",
+      },
+    ],
     //["@vuepress/plugin-shiki"],
   ],
 
