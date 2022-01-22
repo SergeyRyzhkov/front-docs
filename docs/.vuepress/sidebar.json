@@ -10,8 +10,9 @@
     {
       "text": "Типовые кейзы",
       "children": [
-         "/nuxt2/cases/seo.md"
-      ]
+         "/nuxt2/cases/seo.md",
+          "/nuxt2/cases/breadcrumbs.md"
+       ]
     },
 
     {
