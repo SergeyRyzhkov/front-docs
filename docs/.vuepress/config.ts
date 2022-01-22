@@ -28,7 +28,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         id: "G-HDBY5VMPT0",
       },
     ],
-    //["@vuepress/plugin-shiki"],
   ],
 
   locales: {
