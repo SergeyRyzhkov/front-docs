@@ -12,8 +12,8 @@
    метод д.б. `updateUserCartState`  
   
 2. Методы, геттеры, сетеры, наименования переменных и аргументов д.б. в `camelCase`
-   **Неверно**: `async AddToCart (product_id:number) {}`
-   **Верено**:  `async addToCart (productId:number) {}` 
+   - **Неверно**: `async AddToCart (product_id:number) {}`
+   - **Верено**:  `async addToCart (productId:number) {}` 
 
 3. Для установки переменной (или иного случая, например запись в куку) 
    следует использовать единообразие или два метода (`getUserHash` и `setUserHash`),

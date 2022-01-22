@@ -41,10 +41,10 @@ $font-famaly: "Montserrat", sans-serif, "Roboto",
 ```js
 extend: {
     colors: {
-    primary: "var(--primary)",
-    secondary: "var(--secondary)",
-    "text-gray": "var(--text-gray)",
-    "footer-color": "var(--footer-color)",
-  }
+      primary: "var(--primary)",
+      secondary: "var(--secondary)",
+      "text-gray": "var(--text-gray)",
+      "footer-color": "var(--footer-color)",
+    }
 },
 ```
