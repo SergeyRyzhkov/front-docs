@@ -38,6 +38,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     docsDir: "docs",
     lastUpdated: false,
+    sidebarDepth: 1,
     contributorsText: "Автор",
     locales: {
       "/": {
