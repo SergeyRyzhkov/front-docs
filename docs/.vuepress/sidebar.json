@@ -11,7 +11,8 @@
       "text": "Типовые кейзы",
       "children": [
          "/nuxt2/cases/seo.md",
-          "/nuxt2/cases/breadcrumbs.md"
+         "/nuxt2/cases/breadcrumbs.md",
+         "/nuxt2/cases/recaptcha.md"
        ]
     },
 
@@ -19,8 +20,9 @@
       "text": "Разное",
       "children": [
          "/nuxt2/other/cssvars.md",
+         "/nuxt2/other/recaptchautil.md",
          "/nuxt2/other/codereview.md"
-      ]
+        ]
     }
   ]
 }
