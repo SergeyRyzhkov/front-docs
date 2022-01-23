@@ -24,7 +24,7 @@
    Соотвественно в компонента хидера уже не нужны вызовы
 
 5. Для подсчета суммы (агрегация) более читаемо использовать reduce 
-   - **Не очень**
+   **Не очень**
    ```ts
    let price = 0;
    this.cartItems.forEach((el) => {
@@ -35,11 +35,11 @@
    return price;
    ```
 
-   - **Более читаемо**
-  ```ts
-  get cartPrice() {
-    return this.cartItems.reduce((sum, iterCart) => sum + (iterCart.product.price || 0) * iterCart.count, 0);
-  }
-  ```
+   **Более читаемо**
+   ```ts
+   get cartPrice() {
+     return this.cartItems.reduce((sum, iterCart) => sum + (iterCart.product.price || 0) * iterCart.count, 0);
+   }
+   ```
 
   6. Для "читаемого" вида необходимо форматировать числа `sum.toLocaleString("ru-RU");`

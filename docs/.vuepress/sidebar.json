@@ -20,7 +20,10 @@
       "text": "Разное",
       "children": [
          "/nuxt2/other/cssvars.md",
+         "/nuxt2/other/externalscripts.md",
          "/nuxt2/other/recaptchautil.md",
+         "/nuxt2/other/memorycache.md",
+         "/nuxt2/other/methodcachedecorator.md",
          "/nuxt2/other/codereview.md"
         ]
     }
