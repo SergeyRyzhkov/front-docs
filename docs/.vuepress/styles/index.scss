@@ -2,15 +2,16 @@
   scroll-behavior: smooth;
 }
 
-.theme-default-content {
+.theme-default-content,
+.page-meta,
+.page-nav {
   max-width: 1064px !important;
+}
+
+.theme-default-content {
   > p {
     max-width: 1000px;
   }
-}
-
-.page-meta {
-  max-width: 1064px !important;
 }
 
 /* W3C standard
