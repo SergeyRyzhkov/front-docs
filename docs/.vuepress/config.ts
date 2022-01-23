@@ -30,16 +30,16 @@ export default defineUserConfig<DefaultThemeOptions>({
     ],
   ],
 
-  locales: {
-    "/": {
-      lang: "ru-RU",
-      title: "Plenexy. Документация фронтендера",
-    },
-    "/en/": {
-      lang: "en-US",
-      title: "Plenexy. Frontend docs",
-    },
-  },
+  // locales: {
+  //   "/": {
+  //     lang: "ru-RU",
+  //     title: "Plenexy. Документация фронтендера",
+  //   },
+  //   "/en/": {
+  //     lang: "en-US",
+  //     title: "Plenexy. Frontend docs",
+  //   },
+  // },
 
   themeConfig: {
     docsDir: "docs",
@@ -53,11 +53,11 @@ export default defineUserConfig<DefaultThemeOptions>({
         sidebar: sidebar,
       },
 
-      "/en/": {
-        selectLanguageName: "English",
-        navbar: navbar["EN"] as any,
-        sidebar: sidebar,
-      },
+      // "/en/": {
+      //   selectLanguageName: "English",
+      //   navbar: navbar["EN"] as any,
+      //   sidebar: sidebar,
+      // },
     },
   },
 });
