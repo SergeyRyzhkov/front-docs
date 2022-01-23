@@ -3,7 +3,10 @@
 }
 
 .theme-default-content {
-  max-width: 900px !important;
+  max-width: 1064px !important;
+  > p {
+    max-width: 1000px;
+  }
 }
 
 /* W3C standard
