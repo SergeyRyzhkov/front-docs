@@ -6,7 +6,7 @@
 
 **Минимальный компонент**
 
-```vue
+```html
 <template>
   <div>
     <video v-bind="$attrs" :class="videoClasses" v-on="$listeners"></video>
@@ -26,13 +26,13 @@ export default class BaseVideoPlayer extends Vue {
 
 **Пример использования**
 
-```vue
+```html
 <template>
     <LazyBaseVideoPlayer
-        v-if="video && showVideo" // Условие отображения компонента
-        :src="video" // Источник видео
-        class="w-full h-full order-1 bg-[#F5F5F5] absolute z-50" // Класс (стиля) внешнего компонента    
-        video-classes="w-full h-full" // Класс(стиля) внутреннего тега video
+        v-if="video && showVideo"
+        :src="video" 
+        class="w-full h-full order-1 bg-[#F5F5F5] absolute z-50"     
+        video-classes="w-full h-full" 
         controls
     />
 </template>
