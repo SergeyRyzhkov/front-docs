@@ -22,10 +22,6 @@
               "link": "/nuxt2/cases/breadcrumbs.md"
             },
             {
-              "text":"SCSS, CSS переменные и Tailwind",
-              "link": "/nuxt2/other/cssvars.md"
-            },
-            {
               "text":"Google ReCaptcha v3",
               "link": "/nuxt2/cases/recaptcha.md"
             }
