@@ -5,7 +5,7 @@
 ## Исходный код
 
 ```ts
-const loadClassesName = ["rsn-skeleton", "rsn-animate-wave"];
+const loadClassesName = ["skeleton", "skeleton--wave"];
 
 const options = {
   root: null,
@@ -45,6 +45,8 @@ export const observeImage = (target: HTMLElement) => {
 ## Директива
 
 ```ts
+import { observeImage } from "../utils/ImageLazyLoad";
+
 const LazyImg = {
   bind(el, binding) {
     el.decoding = "async";
@@ -57,6 +59,15 @@ const LazyImg = {
       }
     }
     observeImage(el);
+  },
+  
+  update(el, binding) {
+    if (binding.oldValue !== binding.value) {
+      el.setAttribute("data-src", binding.value);
+      if (el.getAttribute("data-loaded") === "true") {
+        el.setAttribute("src", binding.value);
+      }
+    }
   },
 };
 

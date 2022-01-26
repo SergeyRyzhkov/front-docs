@@ -80,7 +80,9 @@ Google ReCaptcha v3 использует, цитата с документаци
 
 *Для даннго примера, в nuxt.config.ts в разделе `publicRuntimeConfig` должно быть указано свойство `reCaptchaSiteKey`* 
 
-```ts{5-7,10}
+```ts{7-9,12}
+import { executeAction, loadReCaptchaScript } from "@/utils/ReCaptcha";
+
 @Component({ validations })
 export default class FeedbackForm extends Vue {
   formModel: FeedbackModel = new FeedbackModel();

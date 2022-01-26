@@ -2,9 +2,9 @@
     {
       "text": "Общие сведения",
       "children": [
-         "/nuxt2/README.md",
-         "/nuxt2/config.md"
-      ]
+         "/nuxt2/other/settings.md"
+       ]
+     
     },
 
     {
