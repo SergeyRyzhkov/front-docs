@@ -1,0 +1,1 @@
+-D prettier prettier-plugin-tailwindcss

@@ -13,6 +13,10 @@
         {
           "text": "Типовые кейзы",
           "children": [
+             {
+              "text":"Skeleton (иллюзия быстрой загрузки страниц)",
+              "link": "/nuxt2/cases/skeleton.md"
+            },
             {
               "text":"SEO",
               "link": "/nuxt2/cases/seo.md"

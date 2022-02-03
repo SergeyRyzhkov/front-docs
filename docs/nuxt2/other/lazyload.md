@@ -5,12 +5,12 @@
 ## Исходный код
 
 ```ts
-const loadClassesName = ["skeleton", "skeleton--wave"];
+const loadClassesName = ["loading-image"];
 
 const options = {
   root: null,
-  rootMargin: "0px",
-  threshold: 0.1,
+  rootMargin: "50px",
+  threshold: 0,
 };
 
 let observer = {
@@ -25,10 +25,14 @@ if (process.client) {
         if (!!lazyImg) {
           lazyImg.setAttribute("src", lazyImg.getAttribute("data-src") || "");
 
-          lazyImg.addEventListener("load", () => {
+          const onLoaded = () => {
             lazyImg.setAttribute("data-loaded", "true");
+            lazyImg.removeAttribute("data-src");
             lazyImg.classList.remove(...loadClassesName);
-          });
+          };
+
+          lazyImg.addEventListener("load", onLoaded);
+          lazyImg.addEventListener("loadeddata", onLoaded);
         }
         observer.unobserve(lazyImg);
       }
@@ -36,7 +40,7 @@ if (process.client) {
   }, options);
 }
 
-export const observeImage = (target: HTMLElement) => {
+export const observe = (target: HTMLElement) => {
   target.classList.add(...loadClassesName);
   observer.observe(target);
 };
@@ -47,9 +51,8 @@ export const observeImage = (target: HTMLElement) => {
 ```ts
 import { observeImage } from "../utils/ImageLazyLoad";
 
-const LazyImg = {
-  bind(el, binding) {
-    el.decoding = "async";
+const LazySrc = {
+  bind(el, binding, _vnode) {
     if (el.setAttribute) {
       if (!el.getAttribute("alt")) {
         el.setAttribute("alt", " ");
@@ -58,20 +61,17 @@ const LazyImg = {
         el.setAttribute("data-src", binding.value);
       }
     }
-    observeImage(el);
+    observe(el);
   },
-  
   update(el, binding) {
     if (binding.oldValue !== binding.value) {
       el.setAttribute("data-src", binding.value);
-      if (el.getAttribute("data-loaded") === "true") {
-        el.setAttribute("src", binding.value);
-      }
+      el.setAttribute("src", binding.value);
     }
   },
 };
 
-Vue.directive("lazyimg", LazyImg);
+Vue.directive("lazysrc", LazySrc);
 ```
 
 ## Пример
@@ -85,7 +85,7 @@ Vue.directive("lazyimg", LazyImg);
       class="flex flex-col cursor-pointer"
     >
       <div class="relative">
-        <img v-lazyimg="imageSrc" width="300" height="160" class="h-160 hover:scale-105 transition-all" alt=" " />
+        <img v-lazysrc="imageSrc" width="300" height="160" class="h-160 hover:scale-105 transition-all" alt=" " />
         <div class="absolute top-16 left-16 bg-primary px-16 py-8 rounded-full text-14 text-white">{{ statusName }}</div>
       </div>
       <div class="flex items-center justify-between mt-16">

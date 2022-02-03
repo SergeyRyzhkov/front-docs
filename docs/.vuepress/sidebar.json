@@ -2,7 +2,8 @@
     {
       "text": "Общие сведения",
       "children": [
-         "/nuxt2/other/settings.md"
+         "/nuxt2/other/settings.md",
+         "/nuxt2/other/jest-settings.md"
        ]
      
     },
@@ -10,6 +11,7 @@
     {
       "text": "Типовые кейзы",
       "children": [
+         "/nuxt2/cases/skeleton.md",
          "/nuxt2/cases/seo.md",
          "/nuxt2/cases/breadcrumbs.md",
          "/nuxt2/cases/recaptcha.md"
@@ -27,7 +29,8 @@
          "/nuxt2/other/lazyload.md",
          "/nuxt2/other/videoplayer.md",
          "/nuxt2/other/geolocation.md",
-         "/nuxt2/other/codereview.md"
+         "/nuxt2/other/parent-child-hooks.md",
+         "/nuxt2/other/sniplet-list.md"
         ]
     }
   ]

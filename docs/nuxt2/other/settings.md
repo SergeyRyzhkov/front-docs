@@ -1,4 +1,5 @@
-# ESlint, Prettier, EditorConfig, StyleLint (TS) #
+# ESlint, Prettier, StyleLint (TS) #
+[[toc]]
 
 ##  Устанавливаем пакеты
 
@@ -15,6 +16,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-tailwindcss": "^2.0.1",
+    
+    "prettier-plugin-tailwindcss": "^0.1.4",
 
     "@nuxtjs/eslint-config-typescript": "^7.0.2",
     "@nuxtjs/eslint-module": "^3.0.2",
@@ -47,9 +51,10 @@
     "@nuxtjs/eslint-config-typescript",
     "prettier",
     "plugin:prettier/recommended",
-    "plugin:nuxt/recommended"
+    "plugin:nuxt/recommended",
+    "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "tailwindcss"],
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/no-explicit-any": 0,
@@ -62,7 +67,13 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "tailwindcss/classnames-order": "off",
+    "tailwindcss/enforces-shorthand": "warn",
+    "tailwindcss/migration-from-tailwind-2": "warn",
+    "tailwindcss/no-arbitrary-value": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/no-contradicting-classname": "error"
   }
 }
 ```
@@ -125,12 +136,18 @@ indent_size = 2
 ## Package.json
 ```json
 "scripts": {
-   "dev": "nuxt",
-   "build": "nuxt build",
-   "start": "nuxt start",
-   "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore --fix src",
-   "lint:style": "stylelint src/**/*.{css,scss,vue}",
-   "format": "prettier .  --write"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore --fix src",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:script && yarn lint:style && yarn lint:prettier",
+    "format": "prettier .  --write",
+    "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --no-cache --runInBand",
+    "test:unit:watch": "jest --watch",
+    "test:unit:coverage": "jest --coverage",
+    "test": "yarn test:unit"
 },
 ```
 
