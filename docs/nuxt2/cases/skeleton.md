@@ -22,8 +22,8 @@
 Также есть множество отдельных пакетов: [Skeleton Elements](https://skeleton-elements.dev/vue/), [vue-loading-skeleton](https://github.com/kitwon/vue-loading-skeleton), [vue-skeleton-loading](https://github.com.cnpmjs.org/jiingwang/vue-skeleton-loading), ... и еще штук 30 
 
 Почти все реализации предполагают: 
-1. Создание дополнительных компонент или же верстка непосредственно в шаблоне скилетона (ов)
-2. Построение скилетона с использованием входящих в пакет собственных компонентов, типовые примеры:
+1. Создание дополнительных компонент или же верстка непосредственно в шаблоне скелетона (ов)
+2. Построение скелетона с использованием входящих в пакет собственных компонентов, типовые примеры:
    
 [vue-bootstrap](https://bootstrap-vue.org/docs/components/skeleton)
 ```vue
@@ -80,8 +80,8 @@
 
 ![Cписок новостей - Skeleton](../../public/skelenon-list.jpg)
 
-2. Используем утилитарные классы либо [Bootstrap](https://getbootstrap.com/docs/5.1/utilities/api/) (Гусары молчать!), а лучше (ИМНО)/
-   [TailwindCSS/](https://tailwindcss.com/)
+2. Используем утилитарные классы либо [Bootstrap](https://getbootstrap.com/docs/5.1/utilities/api/) (Гусары молчать!), а лучше (ИМНО)\
+   [TailwindCSS](https://tailwindcss.com/)
 3. Вопрос. Сколько времени нужно потратить чтобы сделать разметку на утилитарных классах почти любого "скелета"...,\
    а сколько "секса" нужно чтобы настроить все эти вышеуказанные компоненты...
 
