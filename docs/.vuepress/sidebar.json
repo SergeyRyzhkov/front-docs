@@ -2,8 +2,7 @@
     {
       "text": "Общие сведения",
       "children": [
-         "/nuxt2/other/settings.md",
-         "/nuxt2/other/jest-settings.md"
+         "/nuxt2/other/settings.md"
        ]
      
     },
