@@ -27,3 +27,18 @@ get cartPrice() {
      return this.cartItems.reduce((sum, iterCart) => sum + (iterCart.product.price || 0) * iterCart.count, 0);
 }
 ```
+
+**Массив параметров в query**
+```ts{7}
+import { stringify } from "query-string";
+
+async getProductsByCategory(pagination: Pagination, cat: CategoryModel) {
+    const params = { category_id_1c: [cat.title] };
+    return await this.getArrayOrEmptyWithPagination(
+      ProductModel,
+      `users/products?${stringify(params, { arrayFormat: "bracket" })}`,
+      {},
+      pagination
+    );
+}
+```

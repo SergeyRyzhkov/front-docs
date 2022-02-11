@@ -3,8 +3,8 @@
       "text": "Общие принципы",
       "children": [
         "/nuxt2/main/folder-structure.md",
-        "/nuxt2/main/check-lists.md",
-        "/nuxt2/main/settings.md"
+        "/nuxt2/main/settings.md",
+        "/nuxt2/main/check-lists.md"
        ]
      
     },
