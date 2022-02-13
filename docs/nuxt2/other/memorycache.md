@@ -39,7 +39,7 @@ export default class MemoryCache {
   }
 
   static clear() {
-    MemoryCache.entriesMap = new Map<string, CacheEntry>();
+    MemoryCache.entriesMap.clear();
   }
 }
 ```
