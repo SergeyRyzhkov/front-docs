@@ -22,7 +22,7 @@
 [Required Style Guide used by Basicamente](https://gist.github.com/plinionaves/1e619a414602cd535c6b73a035ae2f75)\
 [Domain-Driven Design With React ](https://css-tricks.com/domain-driven-design-with-react/)\
 [Migrating our VueJS Frontend to Domain Driven Design](https://medium.com/penngineering/migrating-our-vuejs-frontend-to-domain-driven-design-d7967865eb4d)\
-[Domain-Driven Design in Vue.js](https://vueschool.io/articles/vuejs-tutorials/domain-driven-design-in-vue-js/)\
+[Domain-Driven Design in Vue.js](https://vueschool.io/articles/vuejs-tutorials/domain-driven-design-in-vue-js/)
 
 
 
@@ -145,12 +145,19 @@ buildModules: [
   ],
 ```
 
+Также при использовании `components:true` необходимо в `nuxt.config.ts` прописать
+```js
+components: [
+   { path: "@/components", pathPrefix: false },
+   { path: "@/layouts", pathPrefix: false },
+   { path: "@/modules", pathPrefix: false },
+],
+```
+
 `init-router-store.module.ts` выполняет:
-1. На хук `"components:dirs"` расширяет настройки опции Nuxt `components:true` (авторегистрация компонентов),\
-   а именно добавляет опции `{ path: "@/xxxx", pathPrefix: false },`
-2. "Отменяет" стандартную "маршрутизацию" на основе структуры страниц в `pages` и вставляет плагин (наш), который "берет"\
+1. "Отменяет" стандартную "маршрутизацию" на основе структуры страниц в `pages` и вставляет плагин (наш), который "берет"\
    маршруты с модулей и расширяет `vue-router`
-3. "Берет" все Vuex-модули из папок `store` и регистрирует их в Vuex
+2. "Берет" все Vuex-модули из папок `store` и регистрирует их в Vuex
 
 ## Исходники ##
 
@@ -162,31 +169,7 @@ import fs, { existsSync } from "fs";
 import type { Module } from "@nuxt/types";
 
 const initAppModule: Module = function () {
-  // ============ components:true =========
-  this.nuxt.hook("components:dirs", (dirs) => {
-    const moduleDirs = getDirectories(resolve(this.options.srcDir, "modules"));
-
-    if (!!moduleDirs) {
-      moduleDirs.forEach((iter) => {
-        const comp = resolve(iter, "components");
-        if (existsSync(comp)) {
-          dirs.push({
-            path: comp,
-            pathPrefix: false,
-          });
-        }
-        const pages = resolve(iter, "pages");
-        if (existsSync(pages)) {
-          dirs.push({
-            path: pages,
-            pathPrefix: false,
-          });
-        }
-      });
-    }
-  });
-
-  // ============== Router =================
+// ============== Router =================
   // Disable parsing `pages/`
   this.nuxt.hook("build:before", () => {
     this.nuxt.options.build.createRoutes = () => {
@@ -211,7 +194,7 @@ const initAppModule: Module = function () {
     return routeList;
   };
 
-  // Add plugin to import router file path as the main template for routing
+// Add plugin to import router file path as the main template for routing
   this.addPlugin({
     src: resolve(__dirname, "router.plugin.ts"), // path to plugin (my plugin)
     fileName: "router.js", // name js file in nuxt template folder (will be replaced)
