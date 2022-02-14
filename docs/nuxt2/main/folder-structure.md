@@ -21,6 +21,7 @@
 [Domain-Driven Design in Nuxt Apps](https://vueschool.io/articles/vuejs-tutorials/domain-driven-design-in-nuxt-apps/)\
 [Required Style Guide used by Basicamente](https://gist.github.com/plinionaves/1e619a414602cd535c6b73a035ae2f75)\
 [Domain-Driven Design With React ](https://css-tricks.com/domain-driven-design-with-react/)\
+[Migrating our VueJS Frontend to Domain Driven Design](https://medium.com/penngineering/migrating-our-vuejs-frontend-to-domain-driven-design-d7967865eb4d)\
 [Domain-Driven Design in Vue.js](https://vueschool.io/articles/vuejs-tutorials/domain-driven-design-in-vue-js/)\
 
 
