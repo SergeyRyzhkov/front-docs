@@ -1,11 +1,12 @@
-# Infinite Scrolling #
+# Infinite Scrolling
 
 [[toc]]
 
-Будем использовать: 
+Будем использовать:
 [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 
 Результат:
+
 ```vue
 <InfiniteScroll @on-intersect="loadMore()">
     <template v-if="loading">
@@ -13,8 +14,7 @@
 </InfiniteScroll>
 ```
 
-
-## Компонент InfiniteScroll.vue ##
+## Компонент InfiniteScroll.vue
 
 ```vue
 <template>
@@ -60,6 +60,51 @@ export default class InfiniteScroll extends Vue {
 }
 </script>
 ```
+
+Vue3 (Composition API)
+
+```vue
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from "vue";
+
+const infiniteScrollWrapper = ref();
+const props = withDefaults(
+  defineProps<{ root?; rootMargin?: string; threshold?: number }>(),
+  {
+    root: null,
+    rootMargin: "300px",
+    threshold: 0.0,
+  }
+);
+const emit = defineEmits(["on-intersect"]);
+
+let observer = {
+  observe(_target: Element) {},
+  disconnect() {},
+};
+
+onMounted(() => {
+  observer = new IntersectionObserver(([item], _observer) => {
+    if (!!item && item.isIntersecting) {
+      emit("on-intersect");
+    }
+  }, props);
+
+  observer.observe(infiniteScrollWrapper.value);
+});
+
+onBeforeUnmount(() => {
+  observer.disconnect();
+});
+</script>
+
+<template>
+  <div ref="infiniteScrollWrapper" style="height: 20px">
+    <slot></slot>
+  </div>
+</template>
+```
+
 ::: tip rootMargin
 Параметр `rootMargin` - может быть полезен в некоторых случаях, так как он дает нам возможность определить границу,\
 которую наблюдатель (observer) будет использовать для поиска пересечений.\
@@ -69,13 +114,13 @@ export default class InfiniteScroll extends Vue {
 :::
 
 **Пояснения**
+
 1. `IntersectionObserver` доступен только на клиенте, соответственно, создаем экземпляр в хуке mounted
 2. `this.observer.observe(this.$el);`, `this.$el` - рутовый дом-элемент нашего компонента, который мы и будем "наблюдать"
 3. `([item], _observer)` - так как элементу нас один, то делаем просто деструкцию одного элемента из массива (сахар)
 4. `this.$emit("on-intersect")` - "выкидываем событие", если наш элемент "пересёк" заданнуюобласть
 
-
-## Пример использования ##
+## Пример использования
 
 ```vue
 <template>
@@ -84,12 +129,16 @@ export default class InfiniteScroll extends Vue {
     <h1>Новости</h1>
 
     <section class="news-list-wrapper mt-40">
-      <NewsItem v-for="iter in newsList" :key="iter.id" :article-model="iter"> </NewsItem>
+      <NewsItem v-for="iter in newsList" :key="iter.id" :article-model="iter">
+      </NewsItem>
     </section>
 
     <!-- При вхождении в область видимости "сработает" коллбек от IntersectionObserver
          и компонент "выкинет" событие on-intersect (наш обработчик loadDataChunk())  -->
-    <InfiniteScroll class="news-list-wrapper mt-0" @on-intersect="loadDataChunk()">
+    <InfiniteScroll
+      class="news-list-wrapper mt-0"
+      @on-intersect="loadDataChunk()"
+    >
       <!-- На ммоент подгрузки данных (loading:boolean) отобразим скелетон -->
       <template v-if="loading">
         <SkeletonNewsItem v-for="index in 6" :key="index"> </SkeletonNewsItem>
@@ -129,7 +178,12 @@ export default class NewsListPage extends Vue {
       // Выполняем запрос к беку за "новой" порцией данных (через пагинацию)
       const result = await this.$serviceLocator
         .getService(EmptyService)
-        .getArrayOrEmptyWithPagination(NewsModel, "users/news", {}, this.pagination);
+        .getArrayOrEmptyWithPagination(
+          NewsModel,
+          "users/news",
+          {},
+          this.pagination
+        );
       // Обновим общее количество элементов (важно если первый раз выполниил запрос к беку)
       this.pagination.total = result.pagination.total;
       // Расширим список Новостей (что было + новая "порция" данных)
@@ -147,7 +201,7 @@ export default class NewsListPage extends Vue {
 </style>
 ```
 
-## Класс-модель-хелпер для пагинации ##
+## Класс-модель-хелпер для пагинации
 
 ```ts
 import { Expose } from "class-transformer";
@@ -187,18 +241,26 @@ export class Pagination extends BaseViewModel {
 
   // Последняя обработанная страница
   static lastSelectedPage(pagination: Pagination) {
-    return pagination.selectedPages.length ? pagination.selectedPages.slice(-1)[0] : 0;
+    return pagination.selectedPages.length
+      ? pagination.selectedPages.slice(-1)[0]
+      : 0;
   }
 
   // Есть ли еще страницы. Необходимо, например, для определения -
   // нужно ли еще делать запрос на API чтобы получить новую порцию данных)
   static hasNextPage(pagination: Pagination) {
     const lastSelectedPage = Pagination.lastSelectedPage(pagination);
-    return lastSelectedPage === 0 || lastSelectedPage < (pagination.lastPage || Pagination.countPage(pagination));
+    return (
+      lastSelectedPage === 0 ||
+      lastSelectedPage <
+        (pagination.lastPage || Pagination.countPage(pagination))
+    );
   }
 
   static countPage(pagination: Pagination) {
-    return pagination.perPage > 0 ? Math.ceil(pagination.total / pagination.perPage) : 0;
+    return pagination.perPage > 0
+      ? Math.ceil(pagination.total / pagination.perPage)
+      : 0;
   }
 }
 ```
