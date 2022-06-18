@@ -14,7 +14,7 @@
 </InfiniteScroll>
 ```
 
-## Компонент InfiniteScroll.vue
+## InfiniteScroll.vue (Nuxt2 class-components)
 
 ```vue
 <template>
@@ -61,7 +61,7 @@ export default class InfiniteScroll extends Vue {
 </script>
 ```
 
-Vue3 (Composition API)
+## InfiniteScroll.vue Vue3 (Composition API)
 
 ```vue
 <script setup lang="ts">
