@@ -65,37 +65,41 @@ export default class InfiniteScroll extends Vue {
 
 ```vue
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref, nextTick } from "vue";
 
 const infiniteScrollWrapper = ref();
-const props = withDefaults(
-  defineProps<{ root?; rootMargin?: string; threshold?: number }>(),
-  {
-    root: null,
-    rootMargin: "300px",
-    threshold: 0.0,
-  }
-);
-const emit = defineEmits(["on-intersect"]);
+const props = withDefaults(defineProps<{ root?; rootMargin?: string; threshold?: number }>(), {
+  root: null,
+  rootMargin: "300px",
+  threshold: 0.0,
+});
+const emit = defineEmits(["intersect-enter", "intersect-leave"]);
 
 let observer = {
   observe(_target: Element) {},
   disconnect() {},
 };
 
-onMounted(() => {
+onMounted(async () => {
   observer = new IntersectionObserver(([item], _observer) => {
-    if (!!item && item.isIntersecting) {
-      emit("on-intersect");
+    if (!!item) {
+      item.isIntersecting ? emit("intersect-enter") : emit("intersect-leave");
     }
   }, props);
-
+  await nextTick();
   observer.observe(infiniteScrollWrapper.value);
 });
 
 onBeforeUnmount(() => {
   observer.disconnect();
 });
+</script>
+
+<template>
+  <div ref="infiniteScrollWrapper" style="height: 20px">
+    <slot></slot>
+  </div>
+</template>
 </script>
 
 <template>
