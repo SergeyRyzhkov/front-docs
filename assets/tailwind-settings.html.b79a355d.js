@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n,a as s}from"./app.40083dda.js";const i={},r=s("p",null,"-D prettier prettier-plugin-tailwindcss",-1),a=[r];function c(_,l){return t(),n("div",null,a)}var d=e(i,[["render",c],["__file","tailwind-settings.html.vue"]]);export{d as default};

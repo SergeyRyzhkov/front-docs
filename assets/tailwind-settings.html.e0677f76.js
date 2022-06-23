@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-56f0d4f9","path":"/nuxt2/other/tailwind-settings.html","title":"","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1643910535000,"contributors":[{"name":"SergeyRyzhkov","email":"SergeyRyzhkov76@gmail.com","commits":1}]},"filePathRelative":"nuxt2/other/tailwind-settings.md"}');export{t as data};

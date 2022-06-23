@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-1a6b3c28","path":"/nuxt2/other/recaptchautil.html","title":"Google ReCaptcha v3 utils","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1642875779000,"contributors":[{"name":"SergeyRyzhkov","email":"SergeyRyzhkov76@gmail.com","commits":1}]},"filePathRelative":"nuxt2/other/recaptchautil.md"}');export{t as data};
