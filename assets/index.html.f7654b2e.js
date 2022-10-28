@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-e809a68e","path":"/nuxt2/","title":"\u041E\u0433\u043B\u0430\u0432\u043B\u0435\u043D\u0438\u0435","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1645513541000,"contributors":[{"name":"SergeyRyzhkov","email":"SergeyRyzhkov76@gmail.com","commits":4}]},"filePathRelative":"nuxt2/README.md"}');export{e as data};
